@@ -15,7 +15,7 @@ public class Initializer {
 	CommandLineRunner initDatabase(UserRepository ur) {
 
 		return args -> {
-			User brad = new User("Brad", "woof");
+			User brad = new User("Brad", "$2a$10$abcdefghijklmaopqestquDMArJwpYyWXAilNvrBFi5A.bI6UPTP.");
 			log.info("Preloading " + ur.save(brad));
 		};
 		
