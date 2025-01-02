@@ -1,29 +1,51 @@
-# AIGS Spring Server
+# Starting the Application
 
-The AI Game Server (AIGS) is a server that supports one or more games, and provides AI players to play against human opponents. In the basic version, only TicTacToe is implemented. However, game modules can easily be added. Student projects can either add new game modules or create clients for existing games.
+Follow these steps to start the TicTacToe application locally:
 
-## Building this project in IntelliJ
+## 1. Clone the Repositories
+- Clone the **Frontend repository** using an IDE like WebStorm or VS Code:
+  ```bash
+  git clone https://github.com/1jakob2/aigsTicTacToe
+  ```
+- Clone the **Backend repository** using an IDE like IntelliJ:
+  ```bash
+  git clone https://github.com/1jakob2/aigsTicTacToeBackend
+  ```
 
-- Open the View menu and select : Tool-Windows : Maven
-- Under Lifecycle, choose "package"
+## 2. Ensure Required Tools Are Installed
+- **Node.js and npm**: If not already installed, download and install Node.js from [nodejs.org](https://nodejs.org) or use the following command:
+  ```bash
+  # For macOS or Linux (using Homebrew):
+  brew install node
 
-The build information will be displayed in the console. Assuming that the build is successful, near the
-end will be a line "Building jar" with a link to the finished JAR file. This will be in the "target"
-subdirectory of the project. You may wish to rename the JAR file to something simpler, like "AIGS.jar".
+  # For Windows: Download the installer from the Node.js website.
+  ```
+- Verify the installation:
+  ```bash
+  node -v
+  npm -v
+  ```
 
-## Running the server
+## 3. Start the Frontend
+- Navigate to the frontend directory:
+  ```bash
+  cd aigsTicTacToe
+  ```
+- Install dependencies:
+  ```bash
+  npm install
+  ```
+- Start the application:
+  ```bash
+  npm run dev
+  ```
 
-The server runs as a standalone Java application. By default, it uses port 50005.
-To run the server from the command line, enter: <code>java -jar aigs-server.jar</code>
+## 4. Start the Backend
+- Open the backend project in IntelliJ or another Java IDE.
+- Run the `main` method to start the backend service.
 
-To run the server as a permanent service <code>xyz</code>
-- Create a new account that will run the service: <code>adduser xyz</code>
-- Copy the JAR file to <code>/home/xyz</code> and change the ownership to <code>xyz:xyz</code>
-- Create a new service script for the service in <code>/usr/local/bin</code>
-- Create a new systemd service definition in: <code>/etc/systemd/system/xyz.service</code>
-- Tell systemd about this service by running: <code>systemctl enable xyz</code>
-- Now you can use: <code>service xyz start/stop/status/restart</code>
+## 5. Access the Application
+- Open the frontend in your browser at `http://localhost:5173/` (default for WebStorm's dev server).
+- Ensure the backend service is running at `http://localhost:50005/`.
 
-## License
-
-This is open source software, licensed under the BSD 3-clause license.
+With these steps completed, the TicTacToe application should be fully functional locally.
